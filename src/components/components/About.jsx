@@ -1,11 +1,10 @@
 import React from "react";
-import Tilt from "react-tilt";
-import { motion } from "framer-motion";
-
-import { styles } from "../../style";
+import { Tilt } from "react-tilt";
+import {motion} from 'framer-motion';
+import {styles} from '../../style';
 import { services } from "../../constants";
-import { SectionWrapper } from "../../hoc/SectiomWrapper";
-import { fadeIn, textVariant } from "../../utils/motion";
+import {fadeIn,textVariant} from '../../utils/motion'
+import { SectionWrapper } from "../../hoc";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
@@ -38,16 +37,15 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+     <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
-
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
+        I'm a skilled software engineer with experience in TypeScript and
         JavaScript, and expertise in frameworks like React, Node.js, and
         Three.js. I'm a quick learner and collaborate closely with clients to
         create efficient, scalable, and user-friendly solutions that solve
@@ -63,4 +61,4 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, "about");
+export default SectionWrapper(About,"about");
