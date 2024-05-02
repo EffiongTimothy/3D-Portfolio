@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import {Tilt} from "react-tilt";
 import { styles } from "../../style";
 import { SectionWrapper } from "../../hoc";
 import { fadeIn, textVariant } from "../../utils/motion";
@@ -18,6 +18,14 @@ const FeedbackCard = ({
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
     className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'
   >
+       <Tilt
+        options={{
+          max: 45,
+          scale: 1,
+          speed: 450,
+        }}
+      
+      >
     <p className='text-white font-black text-[48px]'>"</p>
 
     <div className='mt-1'>
@@ -40,6 +48,7 @@ const FeedbackCard = ({
         />
       </div>
     </div>
+    </Tilt>
   </motion.div>
 );
 
