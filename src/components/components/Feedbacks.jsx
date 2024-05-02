@@ -14,18 +14,19 @@ const FeedbackCard = ({
   company,
   image,
 }) => (
+  <Tilt
+  options={{
+    max: 45,
+    scale: 1,
+    speed: 450,
+  }}
+
+>
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
     className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'
   >
-       <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-      
-      >
+     
     <p className='text-white font-black text-[48px]'>"</p>
 
     <div className='mt-1'>
@@ -48,8 +49,9 @@ const FeedbackCard = ({
         />
       </div>
     </div>
-    </Tilt>
+  
   </motion.div>
+  </Tilt>
 );
 
 const Feedbacks = () => {
